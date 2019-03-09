@@ -1,4 +1,4 @@
-# StartHack-2019
+# Undeaf
 ## Goal:
 We aim to offer deaf people the best communication experience. We help them to express their ideas to the whole world with our app. Thanks to our project they are able to talk to anybody with ease. The app uses AI to tranlsate the sign language gesture into a voice that allows any interlocutor to easily understand what the user tries to say. Finally the answer of the interlocutor is converted to text that the user can read. This completes a conversation between two people that could not easily speak to each other in the past.
 
