@@ -8,7 +8,7 @@ You can find our trained model in the \ml-model folder in both .pb and .mlmodel 
 ```shell
 git clone git@github.com:tf-coreml/tf-coreml.git
 ```
-Your model in .mlmodel format must be located at 
+The model in .mlmodel format must be located at 
 ```shell
 Undeaf/Starthack19/Starthack19/
 ```
