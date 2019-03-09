@@ -5,9 +5,9 @@ We aim to offer deaf people the best communication experience. We help them to e
 ## Repository Structure:
 You can find our trained model in \ml-model in both .pb and .mlmodel format. In the same file you can find a way to convert our previously trained model in .pb to a .mlmodel file. To use it you will have to clone the following repo
 
-´´´shell 
+```shell
 git clone git@github.com:tf-coreml/tf-coreml.git
-´´´
+```
 
 ## External library:
 To recognize sign language alphabet we used Loic Marie's code that you can find on his GitGub repo at:
