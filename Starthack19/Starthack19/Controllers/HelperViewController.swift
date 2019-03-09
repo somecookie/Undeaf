@@ -39,6 +39,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         let videoDevice = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back).devices.first
         do {
             deviceInput = try AVCaptureDeviceInput(device: videoDevice!)
+            //print("------------FORMAT-------------")
+            //print(deviceInput.device.activeFormat)
         } catch {
             print("Could not create video device input: \(error)")
             return
@@ -58,7 +60,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             session.addOutput(videoDataOutput)
             // Add a video data output
             videoDataOutput.alwaysDiscardsLateVideoFrames = true
-            videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
+            videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
             videoDataOutput.setSampleBufferDelegate(self, queue: videoDataOutputQueue)
         } else {
             print("Could not add video data output to the session")

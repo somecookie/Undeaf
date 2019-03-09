@@ -260,6 +260,10 @@
                                     <constraint firstAttribute="trailing" secondItem="XBC-fE-yTA" secondAttribute="trailing" constant="8" id="SRv-2O-dNl"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tD4-ci-kgS">
+                                <rect key="frame" x="87" y="403" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.65490196079999996" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -275,6 +279,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="debugImageView" destination="tD4-ci-kgS" id="bBQ-j2-OIn"/>
                         <outlet property="previewView" destination="hxm-HA-cYI" id="IF8-1T-08P"/>
                     </connections>
                 </viewController>
