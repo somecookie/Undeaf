@@ -14,6 +14,6 @@ Undeaf/Starthack19/Starthack19/
 ```
 
 ## External library:
-To recognize sign language alphabet we used Loic Marie's code that you can find on his GitGub repo at:
+To recognize sign language alphabet we used Loïc Marie's code that you can find on his GitHub repo at:
 
 https://github.com/loicmarie/sign-language-alphabet-recognizer
