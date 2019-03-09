@@ -8,8 +8,12 @@ You can find our trained model in the \ml-model folder in both .pb and .mlmodel 
 ```shell
 git clone git@github.com:tf-coreml/tf-coreml.git
 ```
+The model in .mlmodel format must be located at 
+```shell
+Undeaf/Starthack19/Starthack19/
+```
 
 ## External library:
-To recognize sign language alphabet we used Loic Marie's code that you can find on his GitGub repo at:
+To recognize sign language alphabet we used Loïc Marie's code that you can find on his GitHub repo at:
 
 https://github.com/loicmarie/sign-language-alphabet-recognizer
