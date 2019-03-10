@@ -14,6 +14,7 @@ class AudioViewController: UIViewController {
     @IBOutlet weak var startStopBtn: UIButton!
     @IBOutlet weak var resultLbl: UILabel!
     @IBOutlet weak var resultContainer: UIView!
+    @IBOutlet weak var aslSpelling: UIButton!
     
     let audioEngine = AVAudioEngine()
     let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
@@ -30,10 +31,22 @@ class AudioViewController: UIViewController {
         resultContainer.layer.shadowRadius = 4.0
         resultContainer.layer.shadowOpacity = 0.4
         
+        aslSpelling.clipsToBounds = false
+        aslSpelling.layer.cornerRadius = 15.0
+        aslSpelling.layer.shadowColor = UIColor(hexString: "004B68").cgColor
+        aslSpelling.layer.shadowOffset = CGSize(width: 2.0, height: 3.0)
+        aslSpelling.layer.shadowRadius = 4.0
+        aslSpelling.layer.shadowOpacity = 0.4
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "spelling"{
+            let destination = segue.destination as! ASLSpellingVC
+            if let text = resultLbl.text{
+                destination.text = text.lowercased().filter{$0 != " "}
+            }
+        }
     }
 
     @IBAction func buttonTapped(_ sender: Any) {
@@ -55,6 +68,11 @@ class AudioViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func goToSpelling(_ sender: Any) {
+        performSegue(withIdentifier: "spelling", sender: self)
+    }
+    
 }
 
 extension AudioViewController: SFSpeechRecognizerDelegate{

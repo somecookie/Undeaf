@@ -12,24 +12,31 @@ import Vision
 class VideoViewController: ViewController {
     
     private var detectionOverlay: CALayer! = nil
-    
-    @IBOutlet weak var debugImageView: UIImageView!
+    @IBOutlet weak var containerResults: UIView!
+    @IBOutlet weak var result: UILabel!
     // Vision parts
     private var requests = [VNRequest]()
     private var alphabet = [Character]()
+    
+    private var lastIndex = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         drawVisionRequestResults()
         
         let startingValue = Int(("a" as UnicodeScalar).value)
-        for i in 0..<2{
+        for i in 0..<26{
             if let unicode = UnicodeScalar(i + startingValue){
                 alphabet.append(Character(unicode))
             }
         }
         alphabet.sort{$0 > $1}
-        print(alphabet)
+        
+        containerResults.layer.cornerRadius = 10.0
+        containerResults.layer.shadowColor = UIColor(hexString: "004B68").cgColor
+        containerResults.layer.shadowOffset = CGSize(width: 2.0, height: 3.0)
+        containerResults.layer.shadowRadius = 4.0
+        containerResults.layer.shadowOpacity = 0.4
     }
     
     @discardableResult
@@ -37,7 +44,7 @@ class VideoViewController: ViewController {
         // Setup Vision parts
         let error: NSError! = nil
         
-        guard let modelURL = Bundle.main.url(forResource: "inception_v3", withExtension: "mlmodelc") else {
+        guard let modelURL = Bundle.main.url(forResource: "inception_v3_hi", withExtension: "mlmodelc") else {
             return NSError(domain: "VisionObjectRecognitionViewController", code: -1, userInfo: [NSLocalizedDescriptionKey: "Model file is missing"])
         }
         do {
@@ -48,7 +55,7 @@ class VideoViewController: ViewController {
                     if let results = request.results {
                         let featureVec = (results[0] as! VNCoreMLFeatureValueObservation).featureValue
                         if let multiArray = featureVec.multiArrayValue{
-                            print(multiArray)
+                            //print(multiArray)
                             var bestIdxSoFar = -1
                             var bestValue: Decimal = 0.0
                             for i in 0..<multiArray.count{
@@ -57,8 +64,19 @@ class VideoViewController: ViewController {
                                     bestIdxSoFar = i
                                 }
                             }
-                            if bestValue > 0.75{
-                                print(self.alphabet[bestIdxSoFar])
+                            if bestValue > 0.85{
+                                //print(self.alphabet[bestIdxSoFar])
+                                print(bestIdxSoFar == 0 ? "i" : "h")
+                                if self.lastIndex != bestIdxSoFar{
+                                    if self.result.text != nil{
+                                        self.result.text!.append(bestIdxSoFar == 0 ? "i" : "h")
+                                    }
+                                    else{
+                                        self.result.text = ""
+                                        self.result.text!.append(bestIdxSoFar == 0 ? "i" : "h")
+                                    }
+                                    self.lastIndex = bestIdxSoFar
+                                }
                             }
                         }
                     }
@@ -173,5 +191,16 @@ class VideoViewController: ViewController {
         shapeLayer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.0, 0.65, 0.91, 0.4])
         shapeLayer.cornerRadius = 7
         return shapeLayer
+    }
+    
+    
+    @IBAction func textToSpeech(_ sender: Any) {
+        if let text = result.text{
+            let utterance = AVSpeechUtterance(string: text)
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            
+            let synth = AVSpeechSynthesizer()
+            synth.speak(utterance)
+        }
     }
 }
