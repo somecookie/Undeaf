@@ -23,6 +23,23 @@ class MainViewController: UIViewController {
         
         audioView.addGestureRecognizer(tapAudio)
         videoView.addGestureRecognizer(tapVideo)
+        
+        audioView.backgroundColor = UIColor(hexString: "004B68")
+        audioView.clipsToBounds = false
+        audioView.layer.cornerRadius = 10.0
+        audioView.layer.shadowColor = UIColor(hexString: "004B68").cgColor
+        audioView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        audioView.layer.shadowRadius = 4.0
+        audioView.layer.shadowOpacity = 0.8
+        
+        videoView.backgroundColor = UIColor(hexString: "004B68")
+        videoView.clipsToBounds = false
+        videoView.layer.cornerRadius = 10.0
+        videoView.layer.shadowColor = UIColor(hexString: "004B68").cgColor
+        videoView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        videoView.layer.shadowRadius = 4.0
+        videoView.layer.shadowOpacity = 0.8
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

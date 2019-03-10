@@ -21,6 +21,7 @@
 		E21627C02234693B0067EA35 /* ASLSpellingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21627BF2234693B0067EA35 /* ASLSpellingVC.swift */; };
 		E21627C2223469FB0067EA35 /* ASLAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21627C1223469FB0067EA35 /* ASLAlphabet.swift */; };
 		E21627C7223496D90067EA35 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E21627C6223496D90067EA35 /* Default-568h@2x.png */; };
+		E2819D172234FA7900806568 /* inception_v3_hi_fine.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E2819D162234FA7900806568 /* inception_v3_hi_fine.mlmodel */; };
 		E2C07347223456D200F5582E /* inception_v3_complete.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E2C07346223456D100F5582E /* inception_v3_complete.mlmodel */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		E21627BF2234693B0067EA35 /* ASLSpellingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASLSpellingVC.swift; sourceTree = "<group>"; };
 		E21627C1223469FB0067EA35 /* ASLAlphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASLAlphabet.swift; sourceTree = "<group>"; };
 		E21627C6223496D90067EA35 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E2819D162234FA7900806568 /* inception_v3_hi_fine.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = inception_v3_hi_fine.mlmodel; path = "../../../../../Downloads/Telegram Desktop/inception_v3_hi_fine.mlmodel"; sourceTree = "<group>"; };
 		E2C07346223456D100F5582E /* inception_v3_complete.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = inception_v3_complete.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 			children = (
 				E2C07346223456D100F5582E /* inception_v3_complete.mlmodel */,
 				E21627BD223460F50067EA35 /* inception_v3_hi.mlmodel */,
+				E2819D162234FA7900806568 /* inception_v3_hi_fine.mlmodel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				E21627BE223460F60067EA35 /* inception_v3_hi.mlmodel in Sources */,
 				E21627C02234693B0067EA35 /* ASLSpellingVC.swift in Sources */,
 				E20D253522334E5E00019537 /* MainViewController.swift in Sources */,
+				E2819D172234FA7900806568 /* inception_v3_hi_fine.mlmodel in Sources */,
 				E20D253A2233BC9E00019537 /* PreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

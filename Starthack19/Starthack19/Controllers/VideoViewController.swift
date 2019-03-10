@@ -17,6 +17,7 @@ class VideoViewController: ViewController {
     // Vision parts
     private var requests = [VNRequest]()
     private var alphabet = [Character]()
+    private var alphabetFine = [Character("e"),Character("h"), Character("n"), Character("i"), Character("f")]
     
     private var lastIndex = -1
     
@@ -64,17 +65,12 @@ class VideoViewController: ViewController {
                                     bestIdxSoFar = i
                                 }
                             }
-                            if bestValue > 0.85{
-                                //print(self.alphabet[bestIdxSoFar])
-                                print(bestIdxSoFar == 0 ? "i" : "h")
+                            print(featureVec)
+                            if bestValue > 0.90{
+                                print(self.alphabetFine[bestIdxSoFar])
                                 if self.lastIndex != bestIdxSoFar{
-                                    if self.result.text != nil{
-                                        self.result.text!.append(bestIdxSoFar == 0 ? "i" : "h")
-                                    }
-                                    else{
-                                        self.result.text = ""
-                                        self.result.text!.append(bestIdxSoFar == 0 ? "i" : "h")
-                                    }
+                                    //self.result.text?.append(self.alphabetFine[bestIdxSoFar])
+                                    self.result.text?.append(bestIdxSoFar == 0 ? "i" : "h")
                                     self.lastIndex = bestIdxSoFar
                                 }
                             }
@@ -104,30 +100,6 @@ class VideoViewController: ViewController {
     override func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
         connection.videoOrientation = .portrait
-        /*
-        let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
-        
-        CVPixelBufferLockBaseAddress(imageBuffer, .readOnly)
-        
-        let baseAddress = CVPixelBufferGetBaseAddress(imageBuffer)
-        let bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer)
-        let cropWidth = 200
-        let cropHeight = 200
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        
-        let context = CGContext(data: baseAddress, width: cropWidth, height: cropHeight, bitsPerComponent: 8, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue)
-        // now the cropped image is inside the context.
-        // you can convert it back to CVPixelBuffer
-        // using CVPixelBufferCreateWithBytes if you want.
-        
-        CVPixelBufferUnlockBaseAddress(imageBuffer, .readOnly)
-        
-        // create image
-        let cgImage: CGImage = context!.makeImage()!
-        let image = UIImage(cgImage: cgImage)
-        DispatchQueue.main.async {
-            self.debugImageView.image = image
-        }*/
         
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
