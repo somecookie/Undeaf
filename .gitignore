@@ -80,3 +80,9 @@ iOSInjectionProject/
 
 # ML model in iOS app folder
 Undeaf/Starthack19/Starthack19/*.mlmodel
+
+#JPEG
+**/*.jpg
+
+#Vscode
+**/.vscode/
