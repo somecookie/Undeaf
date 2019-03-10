@@ -19,9 +19,10 @@ class ASLSpellingVC: UIViewController {
         super.viewDidLoad()
         
         for letter in text{
-            images.append(UIImage(imageLiteralResourceName: ASLAlphabet.ASLAlphabet[String(letter)]!))
+            if let src = ASLAlphabet.ASLAlphabet[String(letter)]{
+                images.append(UIImage(imageLiteralResourceName: src))
+            }
         }
-        
         spell()
     }
 

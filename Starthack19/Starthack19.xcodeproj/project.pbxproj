@@ -20,6 +20,7 @@
 		E21627BE223460F60067EA35 /* inception_v3_hi.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E21627BD223460F50067EA35 /* inception_v3_hi.mlmodel */; };
 		E21627C02234693B0067EA35 /* ASLSpellingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21627BF2234693B0067EA35 /* ASLSpellingVC.swift */; };
 		E21627C2223469FB0067EA35 /* ASLAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21627C1223469FB0067EA35 /* ASLAlphabet.swift */; };
+		E21627C7223496D90067EA35 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E21627C6223496D90067EA35 /* Default-568h@2x.png */; };
 		E2C07347223456D200F5582E /* inception_v3_complete.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E2C07346223456D100F5582E /* inception_v3_complete.mlmodel */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +40,8 @@
 		E21627BD223460F50067EA35 /* inception_v3_hi.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = inception_v3_hi.mlmodel; sourceTree = "<group>"; };
 		E21627BF2234693B0067EA35 /* ASLSpellingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASLSpellingVC.swift; sourceTree = "<group>"; };
 		E21627C1223469FB0067EA35 /* ASLAlphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASLAlphabet.swift; sourceTree = "<group>"; };
-		E2C07346223456D100F5582E /* inception_v3_complete.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = inception_v3_complete.mlmodel; path = "../../ml-model/inception_v3_complete.mlmodel"; sourceTree = "<group>"; };
+		E21627C6223496D90067EA35 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E2C07346223456D100F5582E /* inception_v3_complete.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = inception_v3_complete.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		E20D2513223333E500019537 = {
 			isa = PBXGroup;
 			children = (
+				E21627C6223496D90067EA35 /* Default-568h@2x.png */,
 				E20D251E223333E500019537 /* Starthack19 */,
 				E20D251D223333E500019537 /* Products */,
 			);
@@ -72,17 +75,12 @@
 		E20D251E223333E500019537 /* Starthack19 */ = {
 			isa = PBXGroup;
 			children = (
-				E2C07346223456D100F5582E /* inception_v3_complete.mlmodel */,
-				E21627BD223460F50067EA35 /* inception_v3_hi.mlmodel */,
+				E20D252B223333E600019537 /* Info.plist */,
+				E21627C5223495BB0067EA35 /* Helpers */,
+				E21627C3223495940067EA35 /* Models */,
 				E20D25382233BC9200019537 /* Views */,
 				E20D253122334E3C00019537 /* Controllers */,
-				E20D251F223333E500019537 /* AppDelegate.swift */,
-				E20D2523223333E500019537 /* Main.storyboard */,
-				E20D2526223333E600019537 /* Assets.xcassets */,
-				E20D2528223333E600019537 /* LaunchScreen.storyboard */,
-				E20D252B223333E600019537 /* Info.plist */,
-				E20D25362233533E00019537 /* HexaColors.swift */,
-				E21627C1223469FB0067EA35 /* ASLAlphabet.swift */,
+				E21627C4223495A40067EA35 /* Common */,
 			);
 			path = Starthack19;
 			sourceTree = "<group>";
@@ -105,6 +103,35 @@
 				E20D25392233BC9E00019537 /* PreviewView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E21627C3223495940067EA35 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2C07346223456D100F5582E /* inception_v3_complete.mlmodel */,
+				E21627BD223460F50067EA35 /* inception_v3_hi.mlmodel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E21627C4223495A40067EA35 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E20D251F223333E500019537 /* AppDelegate.swift */,
+				E20D2523223333E500019537 /* Main.storyboard */,
+				E20D2526223333E600019537 /* Assets.xcassets */,
+				E20D2528223333E600019537 /* LaunchScreen.storyboard */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E21627C5223495BB0067EA35 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E20D25362233533E00019537 /* HexaColors.swift */,
+				E21627C1223469FB0067EA35 /* ASLAlphabet.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E20D252A223333E600019537 /* LaunchScreen.storyboard in Resources */,
+				E21627C7223496D90067EA35 /* Default-568h@2x.png in Resources */,
 				E20D2527223333E600019537 /* Assets.xcassets in Resources */,
 				E20D2525223333E500019537 /* Main.storyboard in Resources */,
 			);
