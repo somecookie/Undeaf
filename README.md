@@ -17,3 +17,10 @@ Undeaf/Starthack19/Starthack19/
 To recognize sign language alphabet we used Loïc Marie's code that you can find on his GitHub repo at:
 
 https://github.com/loicmarie/sign-language-alphabet-recognizer
+
+## Demo:
+
+<figure>
+  <img alt="portfolio_view" src="https://j.gifs.com/5Q94EB.gif" title="thedescription.html">
+  <figcaption></figcaption>
+</figure>
