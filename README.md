@@ -6,7 +6,7 @@ We aim to offer deaf people the best communication experience. We help them to e
 
 <figure>
   <img alt="portfolio_view" src="https://j.gifs.com/5Q94EB.gif" title="thedescription.html">
-  <figcaption></figcaption>
+  <figcaption>On this small video we can see the text to sign translation that can be used to help the deaf person to hear his/her interlocutor.</figcaption>
 </figure>
 
 
